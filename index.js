@@ -23,11 +23,11 @@ const bot = new ViberBot(logger, {
     avatar: "https://i.pinimg.com/736x/ca/74/d9/ca74d9f573487edc7f2f718abb14398a.jpg" // It is recommended to be 720x720, and no more than 100kb.
 });
 
-if (process.env.NOW_URL || process.env.HEROKU_URL) {
+if (process.env.NOW_URL) {
     const http = require('http');
     const port = process.env.PORT || 8080;
 
-    http.createServer(bot.middleware()).listen(port, () => bot.setWebhook(process.env.NOW_URL || process.env.HEROKU_URL));
+    http.createServer(bot.middleware()).listen(port, () => bot.setWebhook(process.env.NOW_URL));
 } else {
     logger.debug('Could not find the now.sh/Heroku environment variables. Please make sure you followed readme guide.');
 }
