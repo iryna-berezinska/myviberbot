@@ -1,3 +1,5 @@
+"use strict";
+
 {
   "name": "isitup",
   "version": "1.0.0",

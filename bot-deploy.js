@@ -1,3 +1,4 @@
+'use strict';
 
 let prompt = require("prompt");
 let colors = require("colors/safe");
